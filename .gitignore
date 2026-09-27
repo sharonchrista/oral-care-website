@@ -1,0 +1,11 @@
+# Design source files — not needed by the live site
+*.cdr
+images/Logoo.cdr
+
+# OS junk files
+Thumbs.db
+.DS_Store
+
+# Editor/backup files
+*.bak
+*~

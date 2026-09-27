@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Oral Care Collective | Specialised Dental Care, Gurgaon</title>
+<meta name="description" content="Specialised dentistry, not a one-size-fits-all clinic. Orthodontics, implants and oral surgical care from fellowship-trained specialists in Sector 83, Gurgaon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #FFFFFF;       /* main white background */
+    --navy-deep: #FFFFFF;  /* page background */
+    --navy-panel: #F7F5F2; /* panel / card background, soft off-white/grey */
+    --gold: #8B4513;       /* primary brown accent, matches new logo's "C" */
+    --gold-soft: #B9854F;  /* softer brown for hairlines/dividers */
+    --ivory: #1A1A1A;      /* main text: near-black, matches new logo's "O" + wordmark */
+    --slate: #6B6560;      /* secondary text: warm grey */
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--navy-deep);
+    color: var(--ivory);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  .wrap{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    line-height:1.15;
+  }
+  .rule{
+    width:48px;
+    height:1px;
+    background: var(--gold-soft);
+  }
+
+  .pre-launch-banner{
+    background: var(--gold);
+    color: var(--navy-deep);
+    text-align:center;
+    font-size: 0.86rem;
+    font-weight:600;
+    padding: 10px 16px;
+  }
+  .pre-launch-banner a{
+    color: var(--navy-deep);
+    text-decoration:underline;
+  }
+
+  /* ---------- Nav ---------- */
+  nav{
+    position: sticky; top:0; z-index:20;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(147,80,11,0.16);
+  }
+  nav .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height: 76px;
+  }
+  .nav-logo{ display:flex; align-items:center; gap:10px; }
+  .nav-logo img{
+    height: 40px;
+    width:auto;
+  }
+  .nav-logo span{
+    font-family:'Fraunces', serif;
+    font-size: 1.05rem;
+    letter-spacing:0.01em;
+  }
+  .nav-links{
+    display:flex;
+    gap: 32px;
+    list-style:none;
+    font-size: 0.9rem;
+    color: var(--slate);
+  }
+  .nav-links a{ text-decoration:none; transition: color 0.2s; }
+  .nav-links a:hover{ color: var(--ivory); }
+  .nav-cta{
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    font-weight:600;
+    border-radius: 2px;
+    text-decoration:none;
+    white-space:nowrap;
+    transition: background 0.2s, color 0.2s;
+  }
+  .nav-cta:hover{ background: var(--gold); color: var(--navy-deep); }
+  .nav-toggle{ display:none; }
+
+  /* ---------- Hero ---------- */
+  header.hero{
+    position:relative;
+    overflow:hidden;
+    padding: 96px 0 88px;
+    border-bottom: 1px solid rgba(147,80,11,0.16);
+  }
+  header.hero::before{
+    content:"";
+    position:absolute;
+    top:-30%; right:-10%;
+    width: 720px; height:720px;
+    background: radial-gradient(circle, rgba(147,80,11,0.10) 0%, rgba(147,80,11,0) 65%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 64px;
+    align-items:center;
+  }
+  .hero-eyebrow{
+    color: var(--gold);
+    font-size: 0.82rem;
+    font-weight:600;
+    letter-spacing:0.03em;
+  }
+  .hero h1{
+    font-size: clamp(2.4rem, 4.4vw, 3.6rem);
+    margin: 18px 0 22px;
+    max-width: 11ch;
+  }
+  .hero p.lede{
+    color: var(--slate);
+    font-size: 1.08rem;
+    max-width: 46ch;
+    margin-bottom: 36px;
+  }
+  .hero-ctas{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom: 40px; }
+  .btn-primary{
+    background: var(--gold);
+    color: var(--navy-deep);
+    padding: 15px 26px;
+    border-radius: 2px;
+    font-weight:600;
+    font-size: 0.92rem;
+    text-decoration:none;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover{ background:#7A4009; }
+  .btn-secondary{
+    border: 1px solid rgba(74,44,16,0.3);
+    color: var(--ivory);
+    padding: 15px 26px;
+    border-radius: 2px;
+    font-weight:600;
+    font-size: 0.92rem;
+    text-decoration:none;
+    transition: border-color 0.2s;
+  }
+  .btn-secondary:hover{ border-color: var(--gold); }
+  .hero-meta{
+    display:flex;
+    gap: 28px;
+    color: var(--slate);
+    font-size: 0.88rem;
+  }
+  .hero-meta strong{ color: var(--ivory); display:block; font-weight:600; }
+
+  .hero-mark{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .hero-mark-panel{
+    background: var(--navy-panel);
+    border: 1px solid rgba(147,80,11,0.25);
+    border-radius: 4px;
+    padding: 48px;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .hero-mark-panel img{
+    max-width: 220px;
+    width:100%;
+  }
+
+  /* ---------- Section shells ---------- */
+  section{ padding: 88px 0; border-bottom: 1px solid rgba(147,80,11,0.13); }
+  .section-head{ max-width: 640px; margin-bottom: 48px; }
+  .section-eyebrow{ color: var(--gold); font-size: 0.82rem; font-weight:600; letter-spacing:0.03em; margin-bottom: 14px; }
+  .section-head h2{ font-size: clamp(1.7rem, 3vw, 2.2rem); margin-bottom: 16px; }
+  .section-head p{ color: var(--slate); font-size: 1.02rem; max-width: 56ch; }
+
+  /* ---------- Pillars ---------- */
+  .pillars{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(147,80,11,0.18);
+    border: 1px solid rgba(147,80,11,0.18);
+  }
+  .pillar{
+    background: var(--navy-deep);
+    padding: 32px 28px;
+  }
+  .pillar h3{
+    font-family:'Inter', sans-serif;
+    font-weight:600;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  .pillar p{ color: var(--slate); font-size: 0.92rem; }
+
+  /* ---------- Specialists ---------- */
+  .specialists{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .specialist{
+    background: var(--navy-panel);
+    border: 1px solid rgba(147,80,11,0.20);
+    border-radius: 4px;
+    padding: 36px;
+  }
+  .specialist .photo{
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
+    border: 2px solid rgba(198,161,91,0.35);
+    margin-bottom: 20px;
+  }
+  .specialist .role{
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight:600;
+    letter-spacing:0.02em;
+    margin-bottom: 8px;
+  }
+  .specialist h3{ font-size: 1.35rem; margin-bottom: 12px; }
+  .specialist .credentials{
+    color: var(--slate);
+    font-size: 0.86rem;
+    margin-bottom: 18px;
+    line-height:1.55;
+  }
+  .specialist p.bio{ font-size: 0.95rem; color: var(--ivory); opacity:0.9; margin-bottom: 18px; }
+  .specialist .expertise-label{
+    font-size: 0.78rem;
+    font-weight:600;
+    color: var(--gold);
+    letter-spacing:0.02em;
+    margin-bottom: 10px;
+  }
+  .specialist ul.expertise{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap: 6px;
+  }
+  .specialist ul.expertise li{
+    font-size: 0.88rem;
+    color: var(--ivory);
+    opacity:0.85;
+    padding-left: 16px;
+    position:relative;
+  }
+  .specialist ul.expertise li::before{
+    content:"—";
+    position:absolute;
+    left:0;
+    color: var(--gold-soft);
+  }
+
+  /* ---------- Services ---------- */
+  .services-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  .service-group h3{
+    font-family:'Inter', sans-serif;
+    font-weight:600;
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(147,80,11,0.30);
+  }
+  .service-group ul{ list-style:none; }
+  .service-group li{
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(147,80,11,0.13);
+    color: var(--slate);
+    font-size: 0.95rem;
+  }
+  .service-group li:last-child{ border-bottom:none; }
+
+  /* ---------- Trust ---------- */
+  .trust-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .trust-item{
+    display:flex;
+    gap: 14px;
+    align-items:flex-start;
+    padding: 20px 0;
+  }
+  .trust-item svg{ flex-shrink:0; margin-top:3px; }
+  .trust-item h4{ font-size: 0.98rem; font-weight:600; margin-bottom: 4px; }
+  .trust-item p{ color: var(--slate); font-size: 0.9rem; }
+
+  /* ---------- Location ---------- */
+  .location-panel{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items:start;
+  }
+  .location-details .label{ color: var(--gold); font-size: 0.8rem; font-weight:600; margin-bottom: 10px; }
+  .location-details address{
+    font-style:normal;
+    font-size: 1.1rem;
+    line-height:1.6;
+    margin-bottom: 24px;
+  }
+  .hours-row{
+    display:flex;
+    justify-content:space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(147,80,11,0.16);
+    font-size: 0.92rem;
+    color: var(--slate);
+  }
+  .hours-row span:last-child{ color: var(--ivory); }
+  .map-embed{
+    border-radius: 4px;
+    overflow:hidden;
+    border: 1px solid rgba(147,80,11,0.25);
+    height: 320px;
+  }
+  .map-embed iframe{ width:100%; height:100%; border:0; }
+
+  /* ---------- Closing CTA ---------- */
+  .closing-cta{
+    text-align:center;
+    padding: 96px 0;
+    border-bottom: none;
+  }
+  .closing-cta h2{ font-size: clamp(1.8rem, 3.4vw, 2.6rem); max-width: 18ch; margin: 0 auto 32px; }
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding: 56px 0 40px;
+    color: var(--slate);
+    font-size: 0.86rem;
+  }
+  .footer-grid{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    gap: 24px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(147,80,11,0.16);
+    margin-bottom: 24px;
+  }
+  .footer-logo img{
+    height: 36px;
+    width:auto;
+    margin-bottom: 12px;
+  }
+  .footer-links{ display:flex; gap: 40px; }
+  .footer-links ul{ list-style:none; }
+  .footer-links li{ margin-bottom: 8px; }
+  .footer-links a{ text-decoration:none; color: var(--slate); }
+  .footer-links a:hover{ color: var(--ivory); }
+  .footer-bottom{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 860px){
+    .nav-links{ display:none; }
+    .hero-grid{ grid-template-columns: 1fr; }
+    .hero-mark{ order:-1; }
+    .hero-mark-panel{ padding:32px; }
+    .pillars{ grid-template-columns: 1fr 1fr; }
+    .specialists{ grid-template-columns: 1fr; }
+    .services-grid{ grid-template-columns: 1fr; gap: 36px; }
+    .trust-grid{ grid-template-columns: 1fr; }
+    .location-panel{ grid-template-columns: 1fr; }
+  }
+  @media (max-width: 520px){
+    .pillars{ grid-template-columns: 1fr; }
+    .hero-ctas{ flex-direction:column; }
+    .hero-meta{ flex-direction:column; gap:14px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="nav-logo">
+      <img src="images/logo.png" alt="The Oral Care Collective logo">
+      <span>The Oral Care Collective</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#specialists">Specialists</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#location">Location</a></li>
+    </ul>
+    <a href="https://wa.me/919651900859?text=Hi%2C%20I%27d%20like%20to%20book%20a%20consultation%20at%20The%20Oral%20Care%20Collective" target="_blank" rel="noopener" class="nav-cta">Book a Consultation</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="hero-eyebrow">Sector 83, Gurgaon &middot; By appointment only</p>
+      <h1>Orthodontics. Implants. Thoughtful dentistry.</h1>
+      <p class="lede">
+        A premium dental practice where precision meets personalised care. We believe
+        exceptional dentistry isn't about rushing through appointments &mdash; it's about
+        listening, planning, and delivering treatments that last.
+      </p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/919651900859?text=Hi%2C%20I%27d%20like%20to%20book%20a%20consultation%20at%20The%20Oral%20Care%20Collective" target="_blank" rel="noopener" class="btn-primary">Book a Consultation</a>
+        <a href="#specialists" class="btn-secondary">Meet Our Specialists</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>New Gurgaon's first</strong>Specialist-led multi-speciality clinic</div>
+        <div><strong>Digital-first</strong>Intraoral scanning &amp; modern imaging</div>
+      </div>
+    </div>
+    <div class="hero-mark">
+      <div class="hero-mark-panel">
+        <img src="images/logo.png" alt="The Oral Care Collective">
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-eyebrow">Where precision meets personalised care</p>
+      <h2>Most clinics are built for volume. We built ours for precision and attention.</h2>
+      <p>
+        One of New Gurgaon's first specialist-led multi-speciality dental clinics, The Oral
+        Care Collective offers department-driven dentistry with an unhurried, personalised
+        approach. From Invisalign and orthodontics to implants, cosmetic, and family dental
+        care, every treatment is led by a specialist and grounded in evidence-based precision.
+        Every smile, bite, and jaw is evaluated individually &mdash; with a comprehensive
+        evaluation, digital records, and a treatment plan tailored to your goals, function,
+        and long-term oral health, coordinated under one roof.
+      </p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <h3>Digital-first diagnostics</h3>
+        <p>Modern imaging and intraoral scanning for greater precision.</p>
+      </div>
+      <div class="pillar">
+        <h3>Specialist-led care</h3>
+        <p>Treatment planned by experienced clinicians &mdash; not delegated.</p>
+      </div>
+      <div class="pillar">
+        <h3>Unhurried appointments</h3>
+        <p>Dedicated time for discussions, planning and follow-ups.</p>
+      </div>
+      <div class="pillar">
+        <h3>Evidence-based treatment</h3>
+        <p>Ethical recommendations focused on longevity and function.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="specialists">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-eyebrow">Our specialists</p>
+      <h2>Meet the team behind your treatment plan.</h2>
+    </div>
+    <div class="specialists">
+      <div class="specialist">
+        <img src="images/dr-subbu-kashyap.jpeg" alt="Dr. Subbu Kashyap, Orthodontist" class="photo">
+        <p class="role">Consultant Orthodontist</p>
+        <h3>Dr. Subbu Kashyap</h3>
+        <p class="credentials">
+          BDS, MDS &ndash; Orthodontics &amp; Dentofacial Orthopaedics &middot;
+          Certified Invisalign Provider &middot; MBA, IIM Nagpur
+        </p>
+        <p class="bio">
+          Dr. Subbu Kashyap is a specialist Orthodontist dedicated to creating confident,
+          healthy smiles through precise, evidence-based orthodontic care. With expertise in
+          braces and clear aligner therapy, she focuses on delivering beautifully balanced
+          results while preserving long-term oral function and facial aesthetics.
+        </p>
+        <p class="bio">
+          Her clinical interests include adult orthodontics, Invisalign treatment, growth
+          modification in children, and multidisciplinary smile rehabilitation. Dr. Kashyap
+          believes every smile is unique, and her treatment philosophy centres on personalised
+          planning, minimally invasive care, and results that look natural and last.
+        </p>
+        <p class="expertise-label">Areas of Expertise</p>
+        <ul class="expertise">
+          <li>Invisalign &amp; clear aligner therapy</li>
+          <li>Metal, ceramic &amp; self-ligating braces</li>
+          <li>Adult &amp; adolescent orthodontics</li>
+          <li>Growth modification &amp; interceptive orthodontics</li>
+          <li>Dentofacial orthopaedics &amp; smile aesthetics</li>
+        </ul>
+      </div>
+      <div class="specialist">
+        <img src="images/dr-shaurya-verma.jpeg" alt="Dr. Shaurya Verma, Oral &amp; Maxillofacial Surgeon" class="photo">
+        <p class="role">Consultant Oral &amp; Maxillofacial Surgeon</p>
+        <h3>Dr. Shaurya Verma</h3>
+        <p class="credentials">
+          BDS, MDS &ndash; Oral &amp; Maxillofacial Surgery &middot; Implantologist
+        </p>
+        <p class="bio">
+          Dr. Shaurya Verma is an Oral &amp; Maxillofacial Surgeon with a special focus on
+          dental implants, oral surgery, and the restoration of function and aesthetics. His
+          approach combines surgical precision with thoughtful treatment planning, ensuring
+          every patient receives care that is both evidence-based and minimally invasive.
+        </p>
+        <p class="bio">
+          He routinely manages tooth extractions, impacted wisdom teeth, bone augmentation,
+          implant rehabilitation, and complex surgical cases, working closely with restorative
+          dentists and orthodontists to deliver comprehensive, long-term outcomes. Known for
+          his calm and reassuring manner, Dr. Verma is committed to making surgical dentistry
+          a comfortable experience while prioritising safety, precision, and predictable results.
+        </p>
+        <p class="expertise-label">Areas of Expertise</p>
+        <ul class="expertise">
+          <li>Dental implants &amp; full-mouth implant rehabilitation</li>
+          <li>Impacted wisdom tooth surgery</li>
+          <li>Bone grafting &amp; ridge preservation</li>
+          <li>Oral pathology &amp; minor oral surgical procedures</li>
+          <li>Facial trauma &amp; multidisciplinary maxillofacial care</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-eyebrow">Services</p>
+      <h2>Two disciplines, coordinated care.</h2>
+      <p>Each specialty will get its own detailed page as the practice grows.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-group">
+        <h3>Orthodontics</h3>
+        <ul>
+          <li>Braces &amp; clear aligners</li>
+          <li>Invisalign</li>
+          <li>Bite correction</li>
+          <li>Smile design</li>
+        </ul>
+      </div>
+      <div class="service-group">
+        <h3>Oral &amp; Maxillofacial Surgery</h3>
+        <ul>
+          <li>Head &amp; neck oncologic surgery</li>
+          <li>Complex extractions</li>
+          <li>Reconstructive procedures</li>
+          <li>Trauma &amp; pathology care</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="trust">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-eyebrow">Why The Collective</p>
+      <h2>What sets a specialist practice apart.</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C6A15B" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
+        <div>
+          <h4>Specialist-led, not generalist-run</h4>
+          <p>Every treatment plan is designed by a doctor trained specifically in that discipline.</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C6A15B" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
+        <div>
+          <h4>No cookie-cutter protocols</h4>
+          <p>Diagnosis and planning built around your anatomy, goals and timeline.</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C6A15B" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
+        <div>
+          <h4>Verified credentials</h4>
+          <p>Fellowship and postgraduate training from recognised institutions.</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C6A15B" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
+        <div>
+          <h4>Coordinated complex care</h4>
+          <p>Orthodontic and surgical expertise under one roof when cases overlap.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="location">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-eyebrow">Visit us</p>
+      <h2>Sector 83, off Dwarka Expressway.</h2>
+    </div>
+    <div class="location-panel">
+      <div class="location-details">
+        <p class="label">Address</p>
+        <address>
+          SCO 2, 1st Floor, Vatika Market Place&ndash;1<br>
+          Sector 83, Off Dwarka Expressway Link Road<br>
+          Gurgaon 122004
+        </address>
+        <div class="hours-row"><span>Consultations</span><span>By appointment only</span></div>
+        <div class="hours-row"><span>Phone</span><span>[Add phone number]</span></div>
+        <div class="hours-row"><span>Email</span><span>abc@gmail.com</span></div>
+      </div>
+      <div class="map-embed">
+        <iframe
+          src="https://maps.google.com/maps?q=Vatika%20Market%20Place%201%2C%20Sector%2083%2C%20Gurgaon%20122004&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Map to The Oral Care Collective">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing-cta" id="book">
+  <div class="wrap">
+    <h2>Ready for dental care built around you, not a template?</h2>
+    <a href="https://wa.me/919651900859?text=Hi%2C%20I%27d%20like%20to%20book%20a%20consultation%20at%20The%20Oral%20Care%20Collective" target="_blank" rel="noopener" class="btn-primary">Schedule Your Consultation</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="The Oral Care Collective logo">
+        <p>Opening October 2026 in Gurgaon.</p>
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#specialists">Specialists</a></li>
+          <li><a href="#services">Services</a></li>
+        </ul>
+        <ul>
+          <li><a href="#location">Location</a></li>
+          <li><a href="https://wa.me/919651900859?text=Hi%2C%20I%27d%20like%20to%20book%20a%20consultation%20at%20The%20Oral%20Care%20Collective" target="_blank" rel="noopener">Book a consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 The Oral Care Collective. All rights reserved.</span>
+      <span>SCO 2, Vatika Market Place&ndash;1, Sector 83, Gurgaon 122004</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
