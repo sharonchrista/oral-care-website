@@ -102,7 +102,30 @@
     transition: background 0.2s, color 0.2s;
   }
   .nav-cta:hover{ background: var(--gold); color: var(--navy-deep); }
-  .nav-toggle{ display:none; }
+  .nav-toggle{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    width:32px;
+    height:32px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:0;
+  }
+  .nav-toggle span{
+    display:block;
+    height:2px;
+    width:100%;
+    background: var(--ivory);
+    border-radius:2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .nav-toggle.open span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2){ opacity:0; }
+  .nav-toggle.open span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+  .nav-cta-mobile{ display:none; }
 
   /* ---------- Hero ---------- */
   header.hero{
@@ -391,7 +414,30 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width: 860px){
-    .nav-links{ display:none; }
+    .nav-links{
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      flex-direction:column;
+      gap:0;
+      background: var(--navy-deep);
+      border-bottom: 1px solid rgba(147,80,11,0.16);
+      padding: 8px 0;
+    }
+    .nav-links.open{ display:flex; }
+    .nav-links li{ width:100%; }
+    .nav-links a{
+      display:block;
+      padding: 14px 32px;
+      color: var(--ivory);
+    }
+    .nav-cta-mobile{ display:block; border-top: 1px solid rgba(147,80,11,0.16); margin-top:4px; }
+    .nav-cta-mobile a{ color: var(--gold); font-weight:600; }
+    .nav-cta{ display:none; }
+    .nav-toggle{ display:flex; }
+    nav .wrap{ position:relative; }
     .hero-grid{ grid-template-columns: 1fr; }
     .hero-mark{ order:-1; }
     .hero-mark-panel{ padding:32px; }
@@ -421,15 +467,37 @@
       <img src="images/logo.png" alt="The Oral Care Collective logo">
       <span>The Oral Care Collective</span>
     </a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#specialists">Specialists</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#location">Location</a></li>
+      <li class="nav-cta-mobile">
+        <a href="https://wa.me/919651900859?text=Hi%2C%20I%27d%20like%20to%20book%20a%20consultation%20at%20The%20Oral%20Care%20Collective" target="_blank" rel="noopener">Book a Consultation</a>
+      </li>
     </ul>
     <a href="https://wa.me/919651900859?text=Hi%2C%20I%27d%20like%20to%20book%20a%20consultation%20at%20The%20Oral%20Care%20Collective" target="_blank" rel="noopener" class="nav-cta">Book a Consultation</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+<script>
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
 
 <header class="hero">
   <div class="wrap hero-grid">
@@ -629,7 +697,7 @@
         </address>
         <div class="hours-row"><span>Consultations</span><span>By appointment only</span></div>
         <div class="hours-row"><span>Phone</span><span>+91 96519 00859</span></div>
-        <div class="hours-row"><span>Email</span><span>oralcarecollective@gmail.com</span></div>
+        <div class="hours-row"><span>Email</span><span>theoralcarecollective@gmail.com</span></div>
       </div>
       <div class="map-embed">
         <iframe
